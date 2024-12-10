@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Днём Рождения, Бабушка!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #ffcc99, #ff9966);
+            color: #fff;
+        }
+        h1 {
+            font-size: 3rem;
+            margin: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        p {
+            font-size: 1.5rem;
+            margin: 20px;
+        }
+        .balloons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .balloon {
+            position: absolute;
+            bottom: -150px;
+            width: 80px;
+            height: 120px;
+            background-color: #ff6666;
+            border-radius: 50% 50% 50% 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+        .balloon:nth-child(2) { left: 20%; background-color: red; animation-delay: 2s; }
+        .balloon:nth-child(3) { left: 40%; background-color: #313e8a; animation-delay: 4s; }
+        .balloon:nth-child(4) { left: 60%; background-color: #cc66ff; animation-delay: 1s; }
+        .balloon:nth-child(5) { left: 80%; background-color: #e2af24; animation-delay: 3s; }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #ff9966;
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ffcc99;
+        }
+        a{
+            font-family: Arial;
+            font-size: 4rem;
+            border: 2px;
+            border-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="balloons">
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+    </div>
+    <h1>С Днём Рождения, Бабуля!</h1>
+    <p>Бабуля, поздравляю тебя с твом Днем Рождения! В этот день я желаю тебе счастья, здоровья, оставайся такой же жизнерадостной и просто пусть у тебя будет все супер пупер!!!</p>
+    <br>
+   <a>С любовью</a>
+    <br>
+    <a>Твой <font style="color: red;">ВНУЧОК</font></a>
+    <br>
+    <button onclick="playMusic()">Включить музыку</button>
+    <audio id="music" src="happy_birthday.mp3" preload="auto"></audio>
+    <script>
+        function playMusic() {
+            const music = document.getElementById('music');
+            music.play();
+        }
+    </script>
+</body>
+</html>
